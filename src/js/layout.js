@@ -2,13 +2,15 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
-import { Home } from "./views/home";
-import { Demo } from "./views/demo";
-import { Single } from "./views/single";
-import injectContext from "./store/appContext";
+import { Home } from "./component/home.jsx";
+import { Demo } from "./views/demo.js";
+import { Single } from "./component/single.jsx";
+import { PlanetsJumbotron } from "./component/PlanetsJumbotron.jsx";
+import { VehicleJumbotron } from "./component/VehicleJumbotron.jsx";
+import injectContext from "./store/appContext.js";
+import { Navbar } from "./component/navbar.jsx"
+import { Footer } from "./component/footer.js";
 
-import { Navbar } from "./component/navbar";
-import { Footer } from "./component/footer";
 
 //create your first component
 const Layout = () => {
@@ -25,9 +27,10 @@ const Layout = () => {
 						<Route path="/" element={<Home />} />
 						<Route path="/demo" element={<Demo />} />
 						<Route path="/single/:theid" element={<Single />} />
-						<Route path="*" element={<h1>Not found!</h1>} />
+						<Route path="/PlanetsJumbotron/:theid" element={<PlanetsJumbotron />} />
+						<Route path="/VehicleJumbotron/:theid" element={<VehicleJumbotron />} />
+						<Route path="*" element={<Home/>} />
 					</Routes>
-					<Footer />
 				</ScrollToTop>
 			</BrowserRouter>
 		</div>
